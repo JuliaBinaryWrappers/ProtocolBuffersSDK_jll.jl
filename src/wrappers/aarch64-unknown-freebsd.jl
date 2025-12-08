@@ -4,11 +4,11 @@ export libprotobuf, libprotobuf_lite, libprotobuf_lite_pkgconfig, libprotobuf_pk
 using CompilerSupportLibraries_jll
 using Zlib_jll
 JLLWrappers.@generate_wrapper_header("ProtocolBuffersSDK")
-JLLWrappers.@declare_library_product(libprotobuf, "libprotobuf.so.3.16.0.0")
-JLLWrappers.@declare_library_product(libprotobuf_lite, "libprotobuf-lite.so.3.16.0.0")
+JLLWrappers.@declare_library_product(libprotobuf, "libprotobuf.so.3.16.1.0")
+JLLWrappers.@declare_library_product(libprotobuf_lite, "libprotobuf-lite.so.3.16.1.0")
 JLLWrappers.@declare_file_product(libprotobuf_lite_pkgconfig)
 JLLWrappers.@declare_file_product(libprotobuf_pkgconfig)
-JLLWrappers.@declare_library_product(libprotoc, "libprotoc.so.3.16.0.0")
+JLLWrappers.@declare_library_product(libprotoc, "libprotoc.so.3.16.1.0")
 JLLWrappers.@declare_executable_product(protoc)
 function __init__()
     JLLWrappers.@generate_init_header(CompilerSupportLibraries_jll, Zlib_jll)
