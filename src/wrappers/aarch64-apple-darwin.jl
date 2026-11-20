@@ -4,34 +4,18 @@ export libprotobuf, libprotobuf_lite, libprotobuf_lite_pkgconfig, libprotobuf_pk
 using CompilerSupportLibraries_jll
 using Zlib_jll
 JLLWrappers.@generate_wrapper_header("ProtocolBuffersSDK")
-JLLWrappers.@declare_library_product(libprotobuf, "@rpath/libprotobuf.3.16.1.0.dylib")
-JLLWrappers.@declare_library_product(libprotobuf_lite, "@rpath/libprotobuf-lite.3.16.1.0.dylib")
-JLLWrappers.@declare_file_product(libprotobuf_lite_pkgconfig)
-JLLWrappers.@declare_file_product(libprotobuf_pkgconfig)
-JLLWrappers.@declare_library_product(libprotoc, "@rpath/libprotoc.3.16.1.0.dylib")
+JLLWrappers.@declare_library_product(libprotobuf, "@rpath/libprotobuf.3.13.0.0.dylib")
+JLLWrappers.@declare_library_product(libprotoc, "@rpath/libprotoc.3.13.0.0.dylib")
 JLLWrappers.@declare_executable_product(protoc)
+JLLWrappers.@declare_library_product(libprotobuf_lite, "@rpath/libprotobuf-lite.3.13.0.0.dylib")
+JLLWrappers.@declare_file_product(libprotobuf_pkgconfig)
+JLLWrappers.@declare_file_product(libprotobuf_lite_pkgconfig)
 function __init__()
     JLLWrappers.@generate_init_header(CompilerSupportLibraries_jll, Zlib_jll)
     JLLWrappers.@init_library_product(
         libprotobuf,
         "lib/libprotobuf.dylib",
         RTLD_LAZY | RTLD_DEEPBIND,
-    )
-
-    JLLWrappers.@init_library_product(
-        libprotobuf_lite,
-        "lib/libprotobuf-lite.dylib",
-        RTLD_LAZY | RTLD_DEEPBIND,
-    )
-
-    JLLWrappers.@init_file_product(
-        libprotobuf_lite_pkgconfig,
-        "lib/pkgconfig/protobuf-lite.pc",
-    )
-
-    JLLWrappers.@init_file_product(
-        libprotobuf_pkgconfig,
-        "lib/pkgconfig/protobuf.pc",
     )
 
     JLLWrappers.@init_library_product(
@@ -43,6 +27,22 @@ function __init__()
     JLLWrappers.@init_executable_product(
         protoc,
         "bin/protoc",
+    )
+
+    JLLWrappers.@init_library_product(
+        libprotobuf_lite,
+        "lib/libprotobuf-lite.dylib",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_file_product(
+        libprotobuf_pkgconfig,
+        "lib/pkgconfig/protobuf.pc",
+    )
+
+    JLLWrappers.@init_file_product(
+        libprotobuf_lite_pkgconfig,
+        "lib/pkgconfig/protobuf-lite.pc",
     )
 
     JLLWrappers.@generate_init_footer()
